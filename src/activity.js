@@ -76,8 +76,6 @@ class Activity {
       })
       .map(elem => keyValues.push(elem[key]))
       let total = keyValues.reduce((acc, cur) => acc += cur)
-      console.log(total / keyValues.length);
-      
       return (total / keyValues.length)
     }
 
