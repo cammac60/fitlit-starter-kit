@@ -15,7 +15,7 @@ class Activity {
       return Math.round(((matchedElem.numSteps * this.strideLength) / 5280) * 100) / 100;
     }
 
-    returnMinutesActive(data, date, key) {
+    prevDayActivity(data, date, key) {
       let matchedElem = data.find(elem => {
         if(elem.userID === this.userID && elem.date === date) {
           return elem;

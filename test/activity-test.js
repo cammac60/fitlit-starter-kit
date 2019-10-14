@@ -19,7 +19,7 @@ describe('Activity', function(){
     expect(activity.returnUserMiles(activityData, "2019/06/16")).to.equal(2.24);
   });
   it('should return user\'s minutes active', function() {
-    expect(activity.returnMinutesActive(activityData, "2019/06/15", 'minutesActive')).to.equal(138);
+    expect(activity.prevDayActivity(activityData, "2019/06/15", 'minutesActive')).to.equal(138);
   });
   it('should return a weekly average of minutes active for 1 user', function() {
     expect(activity.returnWeekAvg(activityData, '2019/06/15')).to.equal(125);
