@@ -4,24 +4,24 @@ class Activity {
     this.strideLength = user.strideLength;
     this.stepGoal = user.dailyStepGoal;
   }
-  
+
     returnUserMiles(activityData, curDate) {
       let matchedElem = activityData.find(elem => {
          if(elem.userID === this.userID && elem.date === curDate) {
            return elem
          };
       });
-      
+
       return Math.round(((matchedElem.numSteps * this.strideLength) / 5280) * 100) / 100;
     }
 
-    returnMinutesActive(data, date) {
+    returnMinutesActive(data, date, key) {
       let matchedElem = data.find(elem => {
         if(elem.userID === this.userID && elem.date === date) {
-          return elem
+          return elem;
         }
       })
-      return matchedElem.minutesActive;
+      return matchedElem[key];
     }
 
     returnWeekAvg(data, date) {
@@ -39,7 +39,7 @@ class Activity {
       }, 0)
       return (total / 7);
     }
-    
+
     matchGoal(date, data) {
       let user = data.find(elem => {
         return elem.userID === this.userID && elem.date === date;
@@ -92,7 +92,7 @@ class Activity {
 
 
 
-  
+
 }
 
 if (typeof module !== 'undefined') {
