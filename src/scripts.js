@@ -54,3 +54,10 @@ $('#frnd5-step').text(userRepo.findUser(user.friends[4]).dailyStepGoal);
 $('#steps-today').text(activity.prevDayActivity(activityData, '2019/06/22', 'numSteps'));
 $('#mins-active-today').text(activity.prevDayActivity(activityData, '2019/06/22', 'minutesActive'));
 $('#miles-walked-today').text(activity.returnUserMiles(activityData, '2019/06/22'));
+
+$('#user-steps').text(activity.prevDayActivity(activityData, '2019/06/22', 'numSteps'));
+$('#avg-steps').text(activity.checkUserAvgs('2019/06/22', 'numSteps', activityData));
+$('#user-mins').text(activity.prevDayActivity(activityData, '2019/06/22', 'minutesActive'));
+$('#avg-mins').text(activity.checkUserAvgs('2019/06/22', 'minutesActive', activityData));
+$('#user-stairs').text(activity.prevDayActivity(activityData, '2019/06/22', 'flightsOfStairs'));
+$('#avg-stairs').text(activity.checkUserAvgs('2019/06/22', 'flightsOfStairs', activityData));
