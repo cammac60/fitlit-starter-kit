@@ -246,3 +246,7 @@ th, td {
 .tbl-day, .table-activity-2 {
   background-color: #CDCDCD;
 }
+
+#mins-active-week, #steps-week, #miles-walked-week {
+  padding-left: 0px;
+}

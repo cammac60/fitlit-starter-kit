@@ -61,3 +61,7 @@ $('#user-mins').text(activity.prevDayActivity(activityData, '2019/06/22', 'minut
 $('#avg-mins').text(activity.checkUserAvgs('2019/06/22', 'minutesActive', activityData));
 $('#user-stairs').text(activity.prevDayActivity(activityData, '2019/06/22', 'flightsOfStairs'));
 $('#avg-stairs').text(activity.checkUserAvgs('2019/06/22', 'flightsOfStairs', activityData));
+
+$('#mins-active-week').text(activity.checkUserAvgs('2019/06/22', 'minutesActive', activityData));
+$('#steps-week').text(activity.checkUserAvgs('2019/06/22', 'numSteps', activityData));
+// $('#miles-walked-week').text(activity.checkUserAvgs('2019/06/22', , activityData));
