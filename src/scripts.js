@@ -2,6 +2,7 @@ const userRepo = new UserRepo(userData);
 const user = new User(userData[12]);
 const hydration = new Hydration(user.userID);
 const sleep = new Sleep(user.id);
+const activity = new Activity(user);
 
 $('.user-name').text(user.returnFirstName());
 $('.address').text(user.address);
@@ -50,4 +51,17 @@ $('#frnd4-step').text(userRepo.findUser(user.friends[3]).dailyStepGoal);
 $('#frnd5').text(userRepo.findUser(user.friends[4]).name);
 $('#frnd5-step').text(userRepo.findUser(user.friends[4]).dailyStepGoal);
 
-console.log(userRepo.findUser(user.friends[4]).name);
+$('#steps-today').text(activity.prevDayActivity(activityData, '2019/06/22', 'numSteps'));
+$('#mins-active-today').text(activity.prevDayActivity(activityData, '2019/06/22', 'minutesActive'));
+$('#miles-walked-today').text(activity.returnUserMiles(activityData, '2019/06/22'));
+
+$('#user-steps').text(activity.prevDayActivity(activityData, '2019/06/22', 'numSteps'));
+$('#avg-steps').text(activity.checkUserAvgs('2019/06/22', 'numSteps', activityData));
+$('#user-mins').text(activity.prevDayActivity(activityData, '2019/06/22', 'minutesActive'));
+$('#avg-mins').text(activity.checkUserAvgs('2019/06/22', 'minutesActive', activityData));
+$('#user-stairs').text(activity.prevDayActivity(activityData, '2019/06/22', 'flightsOfStairs'));
+$('#avg-stairs').text(activity.checkUserAvgs('2019/06/22', 'flightsOfStairs', activityData));
+
+$('#mins-active-week').text(activity.checkUserAvgs('2019/06/22', 'minutesActive', activityData));
+$('#steps-week').text(activity.checkUserAvgs('2019/06/22', 'numSteps', activityData));
+// $('#miles-walked-week').text(activity.checkUserAvgs('2019/06/22', , activityData));
