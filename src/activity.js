@@ -8,7 +8,7 @@ class Activity {
     returnUserMiles(activityData, curDate) {
       let matchedElem = activityData.find(elem => {
          if(elem.userID === this.userID && elem.date === curDate) {
-           return elem
+           return elem;
          };
       });
 
@@ -79,6 +79,7 @@ class Activity {
       let total = keyValues.reduce((acc, cur) => acc += cur)
       return (total / keyValues.length)
     }
+
     userAllTimeMiles(data) {
       let user = data.filter(elem => elem.userID === this.userID)
       let total = user.reduce((acc, cur) => {
@@ -86,6 +87,19 @@ class Activity {
         return acc
       }, 0)
       return Math.round(((total * this.strideLength) / 5280) * 100) / 100;
+    }
+
+    returnWeekStats(date, data, key) {
+      let week = [];
+      let user = data.filter(elem => {
+        return elem.userID === this.userID;
+      })
+      let index = user.findIndex(elem => elem.date === date)
+      for(let i = index; i < (index + 7); i++) {
+        week.push(user[i][key]);
+        console.log(week)
+      }
+      return week;
     }
 
 

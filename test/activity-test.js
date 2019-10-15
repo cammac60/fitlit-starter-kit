@@ -51,4 +51,22 @@ describe('Activity', function(){
   it('should count all time miles for a specific user', function() {
     expect(activity.userAllTimeMiles(activityData)).to.equal(36.97);
   })
+
+  describe('User week for different keys', function() {
+
+
+    it('should return a weekly view of steps', function() {
+      expect(activity.returnWeekStats('2019/06/15', activityData, "numSteps")).to.deep.equal([4294, 2634, 9256, 12982, 7288, 4294, 2634]);
+    });
+
+    it('should return a weekly view of flightsOfStairs', function(){
+    expect(activity.returnWeekStats('2019/06/15', activityData, "flightsOfStairs")).to.deep.equal([10, 5, 2, 46, 28, 10, 5]);
+    });
+
+    it('should return a weekly view of minutesActive', function(){
+      expect(activity.returnWeekStats('2019/06/15', activityData, "minutesActive")).to.deep.equal([138, 107, 108, 231, 46, 138, 107]);
+      });
+    
+  });
 });
+
