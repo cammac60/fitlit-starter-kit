@@ -97,17 +97,25 @@ class Activity {
       let index = user.findIndex(elem => elem.date === date)
       for(let i = index; i < (index + 7); i++) {
         week.push(user[i][key]);
-        console.log(week)
       }
       return week;
     }
-
-
-
-
-
-
+    findIncreasingDays(data) {
+      let days = [];
+      let tempArr = [];
+      let user = data.filter(elem => elem.userId === this.userID);
+      user.forEach(function(elem) {
+        if (tempArr.length < 3) {
+          tempArr.push({'userID': elem.userID, 'numSteps': elem.numStpes})
+        } if (tempArr >= 3 && tempArr[0].numSteps < tempArr[1].numSteps && tempArr[1].numSteps < tempArr[2].numSteps) {
+          days.push(tempArr);
+          tempArr = [];
+        }
+      });
+      return days;
+    }
 }
+
 
 if (typeof module !== 'undefined') {
   module.exports = Activity;

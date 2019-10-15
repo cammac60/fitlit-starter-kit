@@ -62,6 +62,27 @@ $('#avg-mins').text(activity.checkUserAvgs('2019/06/22', 'minutesActive', activi
 $('#user-stairs').text(activity.prevDayActivity(activityData, '2019/06/22', 'flightsOfStairs'));
 $('#avg-stairs').text(activity.checkUserAvgs('2019/06/22', 'flightsOfStairs', activityData));
 
-$('#mins-active-week').text(activity.checkUserAvgs('2019/06/22', 'minutesActive', activityData));
-$('#steps-week').text(activity.checkUserAvgs('2019/06/22', 'numSteps', activityData));
-// $('#miles-walked-week').text(activity.checkUserAvgs('2019/06/22', , activityData));
+
+$('#user-steps-1').text(activity.returnWeekStats('2019/06/22', activityData, 'numSteps')[0]);
+$('#user-steps-2').text(activity.returnWeekStats('2019/06/22', activityData, 'numSteps')[1]);
+$('#user-steps-3').text(activity.returnWeekStats('2019/06/22', activityData, 'numSteps')[2]);
+$('#user-steps-4').text(activity.returnWeekStats('2019/06/22', activityData, 'numSteps')[3]);
+$('#user-steps-5').text(activity.returnWeekStats('2019/06/22', activityData, 'numSteps')[4]);
+$('#user-steps-6').text(activity.returnWeekStats('2019/06/22', activityData, 'numSteps')[5]);
+$('#user-steps-7').text(activity.returnWeekStats('2019/06/22', activityData, 'numSteps')[6]);
+
+$('#user-stairs-1').text(activity.returnWeekStats('2019/06/22', activityData, 'flightsOfStairs')[0]);
+$('#user-stairs-2').text(activity.returnWeekStats('2019/06/22', activityData, 'flightsOfStairs')[1]);
+$('#user-stairs-3').text(activity.returnWeekStats('2019/06/22', activityData, 'flightsOfStairs')[2]);
+$('#user-stairs-4').text(activity.returnWeekStats('2019/06/22', activityData, 'flightsOfStairs')[3]);
+$('#user-stairs-5').text(activity.returnWeekStats('2019/06/22', activityData, 'flightsOfStairs')[4]);
+$('#user-stairs-6').text(activity.returnWeekStats('2019/06/22', activityData, 'flightsOfStairs')[5]);
+$('#user-stairs-7').text(activity.returnWeekStats('2019/06/22', activityData, 'flightsOfStairs')[6]);
+
+$('#user-mins-1').text(activity.returnWeekStats('2019/06/22', activityData, 'minutesActive')[0]);
+$('#user-mins-2').text(activity.returnWeekStats('2019/06/22', activityData, 'minutesActive')[1]);
+$('#user-mins-3').text(activity.returnWeekStats('2019/06/22', activityData, 'minutesActive')[2]);
+$('#user-mins-4').text(activity.returnWeekStats('2019/06/22', activityData, 'minutesActive')[3]);
+$('#user-mins-5').text(activity.returnWeekStats('2019/06/22', activityData, 'minutesActive')[4]);
+$('#user-mins-6').text(activity.returnWeekStats('2019/06/22', activityData, 'minutesActive')[5]);
+$('#user-mins-7').text(activity.returnWeekStats('2019/06/22', activityData, 'minutesActive')[6]);
