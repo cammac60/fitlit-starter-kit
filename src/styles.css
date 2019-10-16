@@ -5,21 +5,21 @@
 }
 /*
 starting colors :
-  body 323A45
+  body 181C21
   blue 33658A
   lighter blue 86BBD8
   yellow F6AE2D
-  orange F26419
+  orange EDB176
   white FFFFFF
    */
 html, body {
-  background-color: #323A45;
+  background-color: #181C21;
   height: 100%;
 }
 
 header {
-  background-color: #33658A;
-  color: #FFFFFF;
+  background-color: #86A397;
+  color: #181C21;
   display: flex;
   justify-content: space-between;
   font-size: 1.8rem;
@@ -33,7 +33,7 @@ h1 {
 }
 
 #top-button {
-  background-color: #F6AE2D;
+  background-color: #EDB176;
   border: none;
   cursor: pointer;
   float: left;
@@ -66,8 +66,13 @@ main {
   text-align: center;
 }
 
+.padded-wrap-2 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 #step-goals {
-  margin-top: 40px;
+  margin-top: 15px;
 }
 
 h4 {
@@ -83,7 +88,7 @@ h4 {
   display: grid;
   grid-column-gap: 40px;
   grid-row-gap: 20px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
@@ -97,13 +102,13 @@ h4 {
 
 #friend-list {
   background-color: #FFFFFF;
-  border: 2px solid #F6AE2D;
+  border: 2px solid #EDB176;
   border-radius: 2px;
   grid-column: span 1;
 }
 
 .box-label {
-  background-color: #F6AE2D;
+  background-color: #EDB176;
   font-size: 1.2rem;
   font-weight: 800;
   padding: 10px;
@@ -126,7 +131,7 @@ h4 {
 }
 
 .friend {
-  border-bottom: 2px solid #F6AE2D;
+  border-bottom: 2px solid #EDB176;
   display: flex;
   flex-wrap: wrap;
 }
@@ -140,7 +145,7 @@ h4 {
 }
 
 #friend1 {
-  border-top: 2px solid #F6AE2D;
+  border-top: 2px solid #EDB176;
 }
 
 .score-wrap {
@@ -170,15 +175,18 @@ h4 {
 
 .hydration, .sleep, .activity {
   background: #FFFFFF;
-  border: 2px solid #F6AE2D;
+  border: 2px solid #EDB176;
   border-radius: 2px;
   text-align: center;
-  width: 100%;
+}
+
+.padded-wrap {
+  padding: 15px;
 }
 
 .hydration-today, #hours-slept, #sleep-quality, #hours-slept-all, #sleep-quality-all {
   color: #33658A;
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   padding-left: 0px;
 }
 
@@ -199,9 +207,8 @@ h3 {
   font-weight: 800;
 }
 
-.hydration-day {
-  padding: 3px;
-  text-decoration: underline;
+#hydration-tbl {
+  margin-top: 40px;
 }
 
 .lrg-sleep-wrap, .lrg-activity-wrap {
@@ -209,12 +216,12 @@ h3 {
   justify-content: space-around;
 }
 
-.sleep-wrapper, .activity-wapper {
+.activity-wapper {
   margin-top: 20px;
 }
 
 .sleep-label {
-  font-size: 1.7rem;
+  font-size: 1.3rem;
   text-decoration: underline;
 }
 .activity-label {
@@ -222,12 +229,8 @@ h3 {
   text-decoration: underline;
 }
 
-#lrg-sleep-wrap-2 {
-  margin-top: 60px;
-}
-
 table {
-  border: 2px solid #F26419;
+  border: 2px solid #EDB176;
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
@@ -239,11 +242,11 @@ th, td {
   padding: 2px;
 }
 
-.main-tbl-head, .tbl-activity {
+.main-tbl-head, .tbl-activity, .blue-cell {
   background-color: #86BBD8;
 }
 
-.tbl-day, .table-activity-2 {
+.tbl-day, .table-activity-2, #grey-cell {
   background-color: #CDCDCD;
 }
 

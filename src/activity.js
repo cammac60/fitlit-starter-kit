@@ -114,6 +114,26 @@ class Activity {
       });
       return days;
     }
+    returnFriendWeek(date, data, ids) {
+      let steps = 0;
+      let week = [];
+      ids.forEach(function(curUser) {
+        let user = data.filter(elem => {
+          return elem.userID === curUser;
+        })
+        let index = user.findIndex(elem => elem.date === date)
+        for(let i = index; i < (index + 7); i++) {
+          steps += user[i].numSteps;
+        }
+        week.push({
+          'id': curUser,
+          'steps': steps
+        });
+        steps = 0;
+      });
+      let sortedWeek = week.sort((a, b) => b.steps - a.steps);
+      return sortedWeek;
+    }
 }
 
 
