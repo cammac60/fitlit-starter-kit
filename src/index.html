@@ -19,7 +19,7 @@
     <main>
       <h4>Welcome, <span class='user-name'>[insert name]</span>!</h4>
       <div id="panel-container">
-        <section id="user-info">
+        <section class="padded-wrap-2" id="user-info">
           <img id="large-prof-pic" src="images/profpic.png" alt="Default profile photo"/>
           <p>
               <strong>Address:</strong> <span class="address"></span>
@@ -32,7 +32,9 @@
             <p id="step-goals">
               <strong>Your steps goal:</strong> <span class="step-goal"></span>
             <br>
-              <strong>Average steps goal:</strong> <span class="user-avg"></span>
+              <strong>Average user goal:</strong> <span class="user-avg"></span>
+              <br>
+              <strong>Calories burned yesterday:</strong> <span class="calories"></span>
             </p>
           </p>
         </section>
@@ -131,7 +133,7 @@
             </div>
           </section>
         </section>
-        <section class="hydration">
+        <section class="hydration padded-wrap-2">
           <h3>Today you drank:</h3>
           <h1 class="hydration-today"></h1>
           <h3>ounces</h3>
@@ -139,16 +141,30 @@
           <p id="day-by-day">
             Your last 7 days:
           </p>
-          <span class="hydration-day" id="day-1"></span>
-          <span class="hydration-day" id="day-2"></span>
-          <span class="hydration-day" id="day-3"></span>
-          <span class="hydration-day" id="day-4"></span>
-          <br>
-          <span class="hydration-day" id="day-5"></span>
-          <span class="hydration-day" id="day-6"></span>
-          <span class="hydration-day" id="day-7"></span>
+          <table id="hydration-tbl">
+            <tr>
+              <th class="blue-cell">Days</th>
+              <th class="blue-cell">Day 1</th>
+              <th class="blue-cell">Day 2</th>
+              <th class="blue-cell">Day 3</th>
+              <th class="blue-cell">Day 4</th>
+              <th class="blue-cell">Day 5</th>
+              <th class="blue-cell">Day 6</th>
+              <th class="blue-cell">Day 7</th>
+            </tr>
+            <tr>
+              <th id="grey-cell">Oz drank</th>
+              <td id="day-1"></td>
+              <td id="day-2"></td>
+              <td id="day-3"></td>
+              <td id="day-4"></td>
+              <td id="day-5"></td>
+              <td id="day-6"></td>
+              <td id="day-7"></td>
+            </tr>
+          </table>
         </section>
-        <section class="sleep">
+        <section class="sleep padded-wrap">
           <h3>Your sleep today:</h3>
           <span class="lrg-sleep-wrap">
             <span class="sleep-wrapper">
@@ -162,7 +178,7 @@
             </span>
         </span>
         </section>
-        <section class="sleep">
+        <section class="sleep padded-wrap">
           <h3>Your sleep all time:</h3>
           <span id="lrg-sleep-wrap-2" class="lrg-sleep-wrap">
             <span class="sleep-wrapper">
@@ -175,6 +191,54 @@
               <h3 class="sleep-label">Average Quality</h3>
             </span>
         </span>
+        </section>
+        <section class="activity padded-wrap">
+          <h3>Your activity today:</h3>
+          <span class="lrg-activity-wrap">
+            <span class="activity-wrapper">
+              <h1 id="mins-active-today"></h1>
+              <h3 class="activity-label">Minutes Active</h3>
+            </span>
+            <hr>
+            <span class="activity-wrapper">
+              <h1 id="steps-today"></h1>
+              <h3 class="activity-label">Steps</h3>
+            </span>
+            <hr>
+            <span class="activity-wrapper">
+              <h1 id="miles-walked-today"></h1>
+              <h3 class="activity-label">Miles Walked</h3>
+            </span>
+          </span>
+        </section>
+        <section class ="activity">
+          <h3>Your activity today
+            <br>
+            vs.
+            <br>
+            other users:</h3>
+          <table>
+            <tr>
+              <th class="tbl-activity">Activity</th>
+              <th class="tbl-activity">Your Activity</th>
+              <th class="tbl-activity">Average</th>
+            </tr>
+            <tr>
+              <th class="table-activity-2">Steps</th>
+              <td id="user-steps"></td>
+              <td id="avg-steps"></td>
+            </tr>
+            <tr>
+              <th class="table-activity-2">Minutes Active</th>
+              <td id="user-mins"></td>
+              <td id="avg-mins"></td>
+            </tr>
+            <tr>
+              <th class="table-activity-2">Stairs Climbed</th>
+              <td id="user-stairs"></td>
+              <td id="avg-stairs"></td>
+            </tr>
+          </table>
         </section>
         <section class="sleep">
           <h3>Your sleep last week:</h3>
@@ -222,50 +286,6 @@
               </tr>
             </table>
           </span>
-        </section>
-        <section class="activity">
-          <h3>Your activity today:</h3>
-          <span class="lrg-activity-wrap">
-            <span class="activity-wrapper">
-              <h1 id="mins-active-today"></h1>
-              <h3 class="activity-label">Minutes Active</h3>
-            </span>
-            <hr>
-            <span class="activity-wrapper">
-              <h1 id="steps-today"></h1>
-              <h3 class="activity-label">Steps</h3>
-            </span>
-            <hr>
-            <span class="activity-wrapper">
-              <h1 id="miles-walked-today"></h1>
-              <h3 class="activity-label">Miles Walked</h3>
-            </span>
-          </span>
-        </section>
-        <section class ="activity">
-          <h3>Your activity today vs. other users</h3>
-          <table>
-            <tr>
-              <th class="tbl-activity">Activity</th>
-              <th class="tbl-activity">Your Activity</th>
-              <th class="tbl-activity">Average</th>
-            </tr>
-            <tr>
-              <th class="table-activity-2">Steps</th>
-              <td id="user-steps"></td>
-              <td id="avg-steps"></td>
-            </tr>
-            <tr>
-              <th class="table-activity-2">Minutes Active</th>
-              <td id="user-mins"></td>
-              <td id="avg-mins"></td>
-            </tr>
-            <tr>
-              <th class="table-activity-2">Stairs Climbed</th>
-              <td id="user-stairs"></td>
-              <td id="avg-stairs"></td>
-            </tr>
-          </table>
         </section>
         <section class ="activity">
           <h3>Your activity last week:</h3>

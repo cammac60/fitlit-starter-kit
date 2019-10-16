@@ -66,7 +66,13 @@ describe('Activity', function(){
     it('should return a weekly view of minutesActive', function(){
       expect(activity.returnWeekStats('2019/06/15', activityData, "minutesActive")).to.deep.equal([138, 107, 108, 231, 46, 138, 107]);
       });
-    
+
+  });
+
+  it('should return an array of objects with user IDs and total steps for the week', function() {
+    expect(activity.returnFriendWeek('2019/06/15', activityData, [1, 2, 3, 4])).to.deep.equal([ { id: 3, steps: 62856 },
+  { id: 1, steps: 57647 },
+  { id: 2, steps: 43382 },
+  { id: 4, steps: 41426 } ]);
   });
 });
-
